@@ -13,7 +13,8 @@ progressBar = document.querySelector('.progress-bar'),
 videoCurrentTime = document.querySelector('.current-time'),
 videoDuration = document.querySelector('.full-time'),
 speedBtn = document.querySelector('.speed-btn'),
-speedOptions = document.querySelector('.speed-options')
+speedOptions = document.querySelector('.speed-options'),
+flashIcon = document.querySelector('.flash-icon')
 
 let soundOn = true,
 vidDuration = mainVideo.duration
@@ -75,7 +76,7 @@ mainVideo.addEventListener('loadeddata', e =>{
     videoDuration.innerText = e.target.duration
 })
 
-soundBtn.addEventListener('click', ()=>{
+soundBtn.addEventListener('click', () =>{
     if (soundOn==true) {
         mainVideo.volume = 0.0
         soundBtn.innerHTML = `<i class="fa-solid fa-volume-mute"></i>`
@@ -88,7 +89,6 @@ soundBtn.addEventListener('click', ()=>{
         soundOn = true
         soundSlider.style.backgroundSize ='50% 100%'
     }
-    
     soundSlider.value = mainVideo.volume
 })
 
@@ -107,12 +107,28 @@ soundSlider.addEventListener('input', e =>{
 playBtn.addEventListener('click', ()=>{
     if (mainVideo.paused) {
         mainVideo.play()
-        videoOn = true
         playBtn.innerHTML = `<i class="fas fa-pause">`
+        flashIcon.classList.replace('fa-pause','fa-play')
+        
     }
     else{
         mainVideo.pause()
         playBtn.innerHTML = `<i class="fas fa-play">`
+        flashIcon.classList.replace('fa-play','fa-pause')
+    }
+    flashIcon.classList.add('show')
+    setTimeout(()=>{
+        flashIcon.classList.remove('show')
+    }, 400)
+})
+container.addEventListener('click', e =>{
+    if (e.target.tagName == 'VIDEO') {
+        playBtn.click()
+    }
+})
+container.addEventListener('dblclick', e =>{
+    if (e.target.tagName == 'VIDEO' ) {
+        expandBtn.click()
     }
 })
 

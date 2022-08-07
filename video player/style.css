@@ -31,6 +31,24 @@ body, .video-controls, .video-time, .options{
 .container video{
     width: 100%;
 }
+.container .flash-icon{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    font-size: 70px;
+    background: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 0, 0, 0.4);
+    padding: 30px 40px;
+    border-radius: 70px;
+    transform: translateY(-50%) translateX(50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.8s ease;
+}
+.container .flash-icon.show{
+    opacity: 1;
+    pointer-events: auto;
+}
 .container.show-control .wrapper{
     bottom: 0;
     opacity: 1;
