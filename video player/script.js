@@ -98,6 +98,10 @@ soundSlider.addEventListener('input', e =>{
         soundBtn.innerHTML = `<i class="fa-solid fa-volume-mute"></i>`
         soundOn = false
     }
+    else if(e.target.value <= 0.3 && e.target.value > 0){
+        soundBtn.innerHTML = `<i class="fa-solid fa-volume-low"></i>`
+        soundOn = true
+    }
     else{
         soundBtn.innerHTML = `<i class="fa-solid fa-volume-high"></i>`
         soundOn = true

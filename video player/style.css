@@ -35,11 +35,11 @@ body, .video-controls, .video-time, .options{
     position: absolute;
     top: 50%;
     right: 50%;
-    font-size: 70px;
-    background: rgba(255, 255, 255, 0.4);
-    color: rgba(0, 0, 0, 0.4);
+    font-size: 60px;
+    background: rgba(255, 255, 255, 0.3);
+    color: rgba(0, 0, 0, 0.6);
     padding: 30px 40px;
-    border-radius: 70px;
+    border-radius: 80px;
     transform: translateY(-50%) translateX(50%);
     opacity: 0;
     pointer-events: none;
