@@ -191,4 +191,5 @@ body, .video-controls, .video-time, .options{
 .speed-options .active{
     background: #5ba0ff;
     color: antiquewhite;
+    position: relative;
 }
